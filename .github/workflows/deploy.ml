@@ -28,10 +28,10 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Build Astro site
+      - name: Build Astro
         run: bun run build
 
-      - name: Upload artifact
+      - name: Upload site
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist
@@ -45,6 +45,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
